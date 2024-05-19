@@ -1,0 +1,35 @@
+.card {
+    background: #5740A0;
+    width: 23rem;
+    height: 11.25rem;
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    transition: 0.2s;
+}
+
+.card:hover {
+    background: #3c2c6f;
+}
+
+.card-img {
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 1.25rem;
+}
+
+.card-title {
+    font-size: 1.875rem;
+}
+
+.edit {
+    width: 25px;
+    height: 25px;
+    margin-top: -10px;
+    margin-left: 95%;
+    transition: 0.2s;
+}
+
+.edit:hover {
+    filter: invert();
+}
+
