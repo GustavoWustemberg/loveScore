@@ -1,4 +1,4 @@
-# InventoryManager
+# loveScore
 
 ## Pre-reqs
 
@@ -16,3 +16,7 @@
 - Execute `npm install` para instalar os pacotes;
 - Execute `npm run build`;
 - Execute `npm run start`;
+
+## Deploy
+- O BackEnd foi hospedado no render utilizando um servidor da AWS, link da api https://lovesscore.onrender.com/games
+- O FrontEnd foi hospedado na vercel, link do site https://love-score.vercel.app/
