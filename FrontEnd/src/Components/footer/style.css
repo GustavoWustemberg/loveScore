@@ -2,7 +2,6 @@
     background: #2A293E;
     height: 6rem;
     width: 100%;
-    z-index: 999;
     position: fixed;
     bottom: 0;
 }
@@ -13,4 +12,5 @@
     padding: 3rem 1.125rem;
     height: 5.3125rem;
     border-radius: 1.125rem;
+    width: 7.5rem;
 }

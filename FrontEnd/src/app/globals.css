@@ -33,3 +33,26 @@ body {
 .bg-dark {
   background: #111827;
 }
+
+.btn-add {
+  position: fixed;
+  top: 70vh;
+  right: 5%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 4rem;
+
+  width: 4rem;
+  height: 4rem;
+
+  background: #3c2c6f;
+
+  border-radius: 100%;
+}
+
+.clear {
+  margin-bottom: 8rem;
+}

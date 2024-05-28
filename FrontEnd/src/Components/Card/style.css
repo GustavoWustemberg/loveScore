@@ -1,3 +1,7 @@
+.card-group {
+    display: grid;
+}
+
 .card {
     background: #5740A0;
     width: 23rem;
@@ -33,3 +37,27 @@
     filter: invert();
 }
 
+.pr-modal {
+    padding-right: 15%;
+}
+
+.score {
+    width: 2rem;
+    background: none;
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+@media screen and (max-width: 320px) {
+    .pr-modal {
+        padding-right: 10%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .card-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}

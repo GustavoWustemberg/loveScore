@@ -1,8 +1,13 @@
 import Image from 'next/image';
 import './style.css';
 
-export default function Footer({ lead, totalGustavo, totalBruna }) {
-    console.log(lead)
+interface FooterProps {
+    lead: string;
+    totalGustavo: number;
+    totalBruna: number;
+}
+
+export default function Footer({ lead, totalGustavo, totalBruna }: FooterProps) {
     return (
         <footer className="footer flex items-center justify-around">
             <div className='card-footer flex flex-col justify-center items-center'>

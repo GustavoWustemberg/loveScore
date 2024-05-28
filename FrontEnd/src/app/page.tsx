@@ -1,8 +1,8 @@
 "use client";
 import Card from "@/Components/Card/card";
 import Header from "@/Components/Header/header";
+import Modal from "@/Components/Modal/modal";
 import Footer from "@/Components/footer/footer";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 
@@ -11,6 +11,43 @@ export default function Home() {
   const [totalGustavo, setTotalGustavo] = useState(0);
   const [totalBruna, setTotalBruna] = useState(0);
   const [games, setGames] = useState([]);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [gameName, setGameName] = useState("");
+  const [gameImg, setGameImg] = useState("");
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => setModalOpen(false);
+
+
+  const createGame = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const dados = { name: gameName, img: gameImg, gustavo_score: 0, bruna_score: 0 };
+
+    try {
+      const response = await fetch("http://localhost:3333/games", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dados),
+      });
+      const textResponse = await response.text();
+      try {
+        const jsonResponse = JSON.parse(textResponse);
+        console.log(jsonResponse);
+      } catch (err) {
+        console.log(textResponse);
+      }
+      closeModal();
+      // window.location.reload;
+    } catch (err) {
+      console.log(err);
+      alert("Erro ao cadastrar o jogo!");
+    }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +62,7 @@ export default function Home() {
         let totalBrunaScore = 0;
 
         // Calcule as pontuações totais de Gustavo e Bruna
-        data.games.forEach((item) => {
+        data.games.forEach((item: { gustavo_score: number; bruna_score: number }) => {
           totalGustavoScore += item.gustavo_score;
           totalBrunaScore += item.bruna_score;
         });
@@ -50,27 +87,33 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <div className="app">
       <Header />
       <main className="flex flex-col items-center pt-4">
 
-        {/* {
-          lead.length > 1 ?
-            <>
-              <h2 className="text-lg font-bold p-5">Lider de Pontuação</h2>
-              <p className="text-base">{lead}</p>
-            </> :
-            <h2 className="text-lg font-bold p-5">Jogadores empatados</h2>
-        } */}
-
         <Card data={games} />
 
+        <button type="button" onClick={openModal} className="btn-add">+</button>
+
+        <Modal isOpen={isModalOpen} onClose={closeModal} title="Adicionar Jogo">
+          <form onSubmit={createGame} className='flex flex-col items-center pr-modal gap-4 mt-5'>
+            <input type="text" className="w-full input-modal" placeholder="Nome" onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setGameName(e.target.value);
+            }} />
+            <input type="text" className="w-full input-modal" placeholder="Link da imagem" onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setGameImg(e.target.value);
+            }} />
+
+            <button type="submit" className="font-bold w-full btn-modal">Cadastrar</button>
+          </form>
+        </Modal>
       </main>
+      <div className="clear"></div>
       <Footer
         lead={lead}
         totalGustavo={totalGustavo}
         totalBruna={totalBruna}
       />
-    </>
+    </div>
   );
 }
