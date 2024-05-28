@@ -51,7 +51,7 @@ const Card: React.FC<ScoreTableProps> = ({ data }) => {
 
         const dados = { id: idCard, name: nameCard, img: imgCard, gustavo_score: scoreG, bruna_score: scoreB };
         try {
-            const response = await fetch("http://localhost:3333/games", {
+            const response = await fetch("https://lovesscore.onrender.com/games", {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -77,7 +77,7 @@ const Card: React.FC<ScoreTableProps> = ({ data }) => {
 
         const dados = { id: idCard };
         try {
-            const response = await fetch(`http://localhost:3333/games/${idCard}`, {
+            const response = await fetch(`https://lovesscore.onrender.com/games/${idCard}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",

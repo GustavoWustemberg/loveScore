@@ -27,7 +27,7 @@ export default function Home() {
     const dados = { name: gameName, img: gameImg, gustavo_score: 0, bruna_score: 0 };
 
     try {
-      const response = await fetch("http://localhost:3333/games", {
+      const response = await fetch("https://lovesscore.onrender.com/games", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -52,7 +52,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3333/games');
+        const response = await fetch('https://lovesscore.onrender.com/games');
         const data = await response.json();
 
         setGames(data.games);
