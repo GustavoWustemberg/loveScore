@@ -56,3 +56,15 @@ body {
 .clear {
   margin-bottom: 8rem;
 }
+
+.m-6 {
+  margin: 1.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
