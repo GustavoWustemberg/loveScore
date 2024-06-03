@@ -117,3 +117,7 @@ body {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+
+.ml-10 {
+  margin-left: 2.5rem;
+}
