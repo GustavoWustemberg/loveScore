@@ -96,3 +96,11 @@ body {
 .mt-5 {
   margin-top: 1.25rem;
 }
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.items-end {
+  align-items: end;
+}
