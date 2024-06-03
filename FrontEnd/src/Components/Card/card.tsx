@@ -128,7 +128,7 @@ const Card: React.FC<ScoreTableProps> = ({ data }) => {
                                     <input className='score' value={scoreG} onChange={(e) => setScoreG(Number(e.target.value))} type="text" />
                                     <button type="button" className='font-bold modal-title btn-modal' onClick={() => addScore("Gustavo")}>+</button>
                                 </div>
-                                <div className="flex  mt-5">
+                                <div className="flex gap-2 mt-5">
                                     <h2 className='font-bold modal-subtitle'>Bruna</h2>
                                     <button type="button" className='font-bold modal-title btn-modal' onClick={() => removeScore("Bruna")}>-</button>
                                     <input className='score' value={scoreB} onChange={(e) => setScoreB(Number(e.target.value))} type="text" />
