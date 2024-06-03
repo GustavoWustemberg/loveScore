@@ -104,7 +104,7 @@ const Card: React.FC<ScoreTableProps> = ({ data }) => {
                 <div key={key} className="flex card m-6 flex-col">
                     <div className='flex'>
                         <img src={item.img} alt={item.name} title={item.name} className="card-img" />
-                        <h2 className='font-bold card-title ml-6 mt-1.5'>{item.name}</h2>
+                        <h2 className='font-bold card-title ml-6 mt-1_5'>{item.name}</h2>
                     </div>
 
                     <div className="flex justify-around">
