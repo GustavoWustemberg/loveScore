@@ -4,7 +4,7 @@ import './style.css';
 export default function Header() {
     return (
         <header className="header flex items-center">
-            <Image src='/logo.png' alt='logo' title='logo' />
+            <Image className='logo' src='/logo.png' alt='logo' title='logo' />
         </header>
     );
 

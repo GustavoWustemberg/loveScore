@@ -2,3 +2,10 @@
     background: #362A60;
     height: 4.3rem;
 }
+
+.logo {
+    width: 7rem;
+    margin-left: 2.5rem;
+    background: #fff;
+    border-radius: 0.5rem;
+}
