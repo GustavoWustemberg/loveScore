@@ -1,7 +1,6 @@
 "use client";
 import PlayerScore from '@/Interfaces/score';
 import './style.css';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Modal from '../Modal/modal';
 
